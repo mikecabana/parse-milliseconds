@@ -1,0 +1,30 @@
+{
+	"name": "parse-milliseconds",
+	"version": "1.0.0",
+	"description": "Parses milliseconds into an object. Package paraphrased from ",
+	"main": "dist/index.js",
+	"scripts": {
+		"prepublish": "tsc"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mikecabana/parse-milliseconds.git"
+	},
+	"keywords": [
+		"parse",
+		"milliseconds",
+		"typescript",
+		"node"
+	],
+	"types": "dist/index.d.ts",
+	"author": "Michael Cabana",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mikecabana/parse-milliseconds/issues"
+	},
+	"homepage": "https://github.com/mikecabana/parse-milliseconds#readme",
+	"devDependencies": {
+		"@tsconfig/node16": "^1.0.2",
+		"typescript": "^4.5.5"
+	}
+}
