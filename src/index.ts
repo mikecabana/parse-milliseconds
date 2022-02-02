@@ -1,4 +1,15 @@
-const parseMilliseconds = (milliseconds: number) => {
+export interface ProcessedMilliseconds {
+	[key: string]: number;
+	days: number;
+	hours: number;
+	minutes: number;
+	seconds: number;
+	milliseconds: number;
+	microseconds: number;
+	nanoseconds: number;
+}
+
+const parseMilliseconds = (milliseconds: number): ProcessedMilliseconds => {
 	return {
 		days: Math.trunc(milliseconds / 86400000),
 		hours: Math.trunc(milliseconds / 3600000) % 24,
