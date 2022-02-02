@@ -1,10 +1,10 @@
 {
 	"name": "parse-milliseconds",
 	"version": "1.0.0",
-	"description": "Parses milliseconds into an object. Package paraphrased from ",
+	"description": "Parses milliseconds into an object. Credit to sindresorhus/parse-ms, package heavily paraphrased from his project and converted to typescript.",
 	"main": "dist/index.js",
 	"scripts": {
-		"prepublish": "tsc"
+		"build": "tsc"
 	},
 	"repository": {
 		"type": "git",
