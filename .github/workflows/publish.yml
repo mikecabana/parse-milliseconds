@@ -42,6 +42,8 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
+      - run: git config user.email "mikeyc343@gmail.com"
+      - run: git config user.name "action-bot"
       - run: npm run release
       - run: git push --follow-tags origin main
       
