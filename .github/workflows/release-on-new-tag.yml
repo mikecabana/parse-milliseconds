@@ -1,7 +1,7 @@
 name: Release On new Tag
 
 on:
-  create:
+  push:
     tags:
       - v*
 
