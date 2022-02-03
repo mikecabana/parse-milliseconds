@@ -1,7 +1,7 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
 
-name: Publish Package
+name: On Push to Main
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
         with:
           path: dist
       
-  create-release:
+  cut-release:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -47,28 +47,4 @@ jobs:
       - run: npm run release
       - run: git push --follow-tags origin main
       
-  publish-release:
-    needs: create-release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-      - uses: ncipollo/release-action@v1
-        with:
-          bodyFile: "CHANGELOG.md"
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-  publish-npm:
-    needs: publish-release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-      - uses: actions/download-artifact@v2.1.0
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+ 
