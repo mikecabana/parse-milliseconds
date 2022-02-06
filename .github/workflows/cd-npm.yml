@@ -1,11 +1,11 @@
-name: Publish to NPM
+name: "CD: Publish to NPM"
 
 on:
   release:
-    types: [published]
+    types: [ created ]
 
 jobs:
-  publish-npm:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
