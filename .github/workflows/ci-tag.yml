@@ -45,7 +45,7 @@ jobs:
           node_version: 16
     
       - name: Set git config
-        run: git config user.email "mikeyc343@gmail.com" && git config user.name "mikecabana"
+        run: git config user.email "<>" && git config user.name "ACTION BOT"
 
       - name: Cut release
         run: npm run release
@@ -53,4 +53,4 @@ jobs:
       - name: Commit release  
         run: git push --follow-tags origin main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_MIKE }}
+          GITHUB_TOKEN: ${{ secrets.PAT_CI_TOKEN }}
