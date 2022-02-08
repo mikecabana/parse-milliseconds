@@ -40,6 +40,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT_CI_TOKEN }}
+          
       - uses: actions/setup-node@v2
         with:
           node_version: 16
@@ -49,8 +52,13 @@ jobs:
 
       - name: Cut release
         run: npm run release
+      
+      - uses: github-actions-x/commit@v2.8
+        with:
+          github-token: ${{ secrets.PAT_CI_TOKEN }}
+          name: ci-bot
         
-      - name: Commit release  
-        run: git push --follow-tags origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_CI_TOKEN }}
+#       - name: Commit release  
+#         run: git push --follow-tags origin main
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.PAT_CI_TOKEN }}
