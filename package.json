@@ -1,6 +1,6 @@
 {
 	"name": "parse-milliseconds",
-	"version": "1.0.11",
+	"version": "1.0.12",
 	"description": "Parses milliseconds into an object. Credit to sindresorhus/parse-ms, package heavily paraphrased from his project and converted to typescript.",
 	"main": "dist/index.js",
 	"files": [
