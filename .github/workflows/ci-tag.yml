@@ -41,7 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.PAT_CI_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           
       - uses: actions/setup-node@v2
         with:
@@ -60,5 +60,3 @@ jobs:
         
       - name: Commit release  
         run: git push --follow-tags origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_CI_TOKEN }}
